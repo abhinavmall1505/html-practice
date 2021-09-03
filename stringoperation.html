@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        button {
+            margin-top: 15px;
+            border-radius: 6px;
+            background-color: aquamarine;
+        }
+
+        input {
+            margin-top: 30px;
+            padding: 10px 20px;
+            border-color: solid black;
+            background-color: pink;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <label for="string">enter string</label><br>
+    <input type="text" id="st" placeholder="enter the string">
+    <button type="submit" onclick="func()"
+        style="display : inline-block; border:1px solid blue; padding: 10px">submit</button><br>
+    <input type="number" id="first" placeholder="min">
+    <input type="number" id="second" placeholder="max">
+    <button type="submit" onclick="operations('slice')" value="slice">slice</button><br>
+    <input type="text" id="str1" placeholder="word to be replaced">
+    <input type="text" id="str2" placeholder="with which word ">
+    <button type="button" style="display : inline-block; border:1px solid blue; padding: 10px"
+        onclick="operations('replace')">replace</button><br>
+    <input type='number' id="charat">
+    <button type="button" style="display : inline-block;border:1px solid red; padding: 10px"
+        onclick="operations('charaAt')">charAt</button><br>
+    <input type="text" id="cat" placeholder="enter the string to add">
+    <button type="button" style="display : inline-block; border:1px solid red; padding: 10px"
+        onclick="operations('concat')">concat</button>
+    <div id='error'></div>
+    <div>
+
+
+        <button type="button" style="display : inline-block; border:1px solid blue; padding: 10px"
+            onclick="operations('toUpperCase')">toUpperCase</button>
+        <button type="button" style="display : inline-block; border:1px solid red; padding: 10px"
+            onclick="operations('toLowerCase')">toLowerCase</button>
+        <button type="button" style="display : inline-block;border:1px solid red; padding: 10px"
+            onclick="operations('split')">split</button>
+        <button type="button" style="display : inline-block; border:1px solid blue; padding: 10px"
+            onclick="operations('length')">know the length of string</button>
+    </div>
+    <p id="demo"></p>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    </div>
+    <script>
+        let fruits = "";
+        let error = '';
+        function func() {
+
+            let val = document.getElementById('st').value
+            console.log(val)
+            document.getElementById("demo").innerHTML = val;
+        }
+
+
+        function resetError() {
+
+            document.getElementById('error').innerHTML = ''
+        }
+
+
+        function operations(operationName) {
+            //console.log(operationName)
+
+            switch (operationName) {
+
+
+                case 'toUpperCase':
+
+                    let upper = document.getElementById("st").value;
+                    if (upper != null && upper != '') {
+                        let b = upper.toUpperCase();
+                        document.getElementById("demo").innerHTML = b;
+                        document.getElementById("demo").value = "";
+
+                    }
+                    else {
+                        error = alert('emmpty input not allowed')
+                        document.getElementById('error').innerHTML = error
+                    }
+                    break;
+                case 'toLowerCase':
+                    let Lower = document.getElementById("st").value;
+                    if (Lower != null && Lower != '') {
+                        let c = Lower.toLowerCase();
+                        document.getElementById("demo").innerHTML = c;
+                        document.getElementById("demo").value = "";
+
+                    }
+                    else {
+                        error = alert('emmpty input not allowed')
+                        document.getElementById('error').innerHTML = error
+                    }
+                    break;
+                case 'charaAt':
+
+                    let c = document.getElementById("charat").value;
+                    console.log(c)
+                    let char = document.getElementById("st").value;
+                    let z = char.charAt(c)
+                    document.getElementById("demo").innerHTML = z;
+                    break;
+
+                case 'replace':
+                    let ewe = document.getElementById("st").value;
+                    console.log('ewe', ewe)
+                    let qwe = document.getElementById("str1").value;
+                    console.log('qwe', qwe)
+                    let awe = document.getElementById("str2").value;
+                    console.log('awe', awe)
+                    if ((qwe != null && qwe != '') && (awe != null && awe != '')) {
+                        let asd = ewe.replace(qwe, awe)
+                        console.log(asd)
+                        document.getElementById("demo1").innerHTML = asd;
+
+                    }
+                    else {
+                        error = alert('emmpty input not allowed')
+                        document.getElementById('error').innerHTML = error
+                    }
+                    break;
+
+                case 'slice':
+
+                    let a = document.getElementById("first").value;
+                    let b = document.getElementById("second").value;
+                    let k = document.getElementById("st").value;
+                    console.log('a', a)
+                    console.log('b', b)
+                    let u = k.slice(a, b);
+                    document.getElementById("demo1").innerHTML = u;
+                    break;
+                case 'concat':
+                    let y = document.getElementById("st").value;
+                    let s = document.getElementById("cat").value;
+                    let r = y.concat(' ' + s);
+                    document.getElementById("demo").innerHTML = r;
+                    break;
+                case 'length':
+                    let l = document.getElementById("st").value;
+                    let o = l.length;
+                    document.getElementById("demo").innerHTML = o;
+                    break;
+
+                case 'split':
+                    let f = document.getElementById("st").value;
+                    let j = f.split("");
+                    document.getElementById("demo").innerHTML = j;
+                default:
+                    break;
+            }
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
