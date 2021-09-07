@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <label for="string">enter string</label>
+        <input type="text" id="st" placeholder="enter the string" onchange="func()">
+        <script>
+            
+            function func(){
+                let val = document.getElementById('st').value
+
+                console.log(val)
+                document.getElementById("st").value = ""
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+<h3>Q2. String formatting</h3>
+<input id="replace" name="name" placeholder="Enter your value">
+<button onclick="change()">submit</button>
+<br />
+<br />
+<div>Output</div>
+<div id="output"></div>
+
+<script>
+function  change(){
+  try {
+     var a = document.getElementById("replace").value;
+     if(a !== null && a.length > 0){
+       let t = a.replace(/ /g , "-");
+       let m = t.toLowerCase();
+       document.getElementById("output").innerHTML = m ;
+    }
+  } catch(err){
+      alert(err)
+  }
+}
+</script>
+
+</body>
+</html>

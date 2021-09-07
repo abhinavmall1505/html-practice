@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>registration form</title>
+<style>
+.box {
+ padding:10px;
+ width: 300px;
+ height: 400px;
+ overflow: scroll;
+ background-color: #6e6ea0;
+ 
+
+ }
+ {
+ border: 3px solid red;
+ width: 200px;
+ height: 
+ 
+ }
+ .button {
+ 
+ padding: 10px;
+ }
+ .date {
+ text-color: white;
+ 
+ }
+ label{
+ color:white;
+ padding-bottom:10px;
+ 
+ 
+ }
+input{
+margin-bottom: 10px;
+}
+
+ .field-wrap{
+ padding: 7px 0px;
+ }
+ 
+ .button-yellow{
+ 	background-color: orange;
+ }
+ </style>
+</head>
+<body>
+<form style="background-color: ">
+<div class="one">
+ <div class="box">
+  <div class="field-wrap"> 
+  <label for="event"> <b>Event name:<b></label><br/>
+  <input  type="text" id="event" name="event">
+  </div>
+  <div class="field-wrap">
+   <label for="date">Date:</label><br/>
+  <input type="text" id="date" name="date">
+  </div>
+  <div class="field-wrap"> 
+   <label for="time">Time:</label><br/>
+  <input type="text" id="time" name="time">
+  </div> 
+  <div class="field-wrap">
+   <label for="add">Address:</label><br/>
+  <input type="text" id="add" name="add">
+  </div>
+  <div class="field-wrap"> 
+   <label for="city" >City:</label><br/>
+  <input type="text" id="city" name="city">
+  </div>
+  <div class="field-wrap">
+   <label for="con"> Country:</label><br/>
+  <input type="text" id="con" name="con">
+  </div><br/></br>
+  <div> 
+  <button class="button button-yellow">Save:</button>
+   <!--<button type="submit" value="save">save</button>-->
+   <button class="button" type="submit" value="save">Cancle</button>
+   
+   </div>
+ </div>
+</div>
+ 
+ </form>
+
+</body>
+</html>
+

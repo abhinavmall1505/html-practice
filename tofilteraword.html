@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<p>The Array.sort() method sorts the elements of an array.</p>
+
+<p id="demo"></p>
+
+<script>
+const points = ['ab', 'cd', 'axyz', 'ac'];
+const searchkey = 'a'
+let newArray = points.filter((item) => {
+console.log('index', item.indexOf(searchkey))
+	if(item.indexOf(searchkey) >= 0){
+     return true
+    }else {
+    	return false
+    }
+    
+
+});
+document.getElementById("demo").innerHTML = newArray;
+</script>
+
+</body>
+</html>
+

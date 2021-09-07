@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    button {
+        margin-top: 20px;
+        border-radius: 6px;
+        background-color: aquamarine;
+    }
+   input{
+    margin-top: 20px;
+        border-color: solid black;
+        background-color: pink  ;
+        border-left-width: 0rem;
+   }
+</style>
+</head>
+<body>
+
+<input type="text" id="in" onchange="resetError()" placeholder="enter the element of array"></input>\
+<div id='error'></div>
+<div>
+<button type="button" style="display : inline-block;border:1px solid red; padding: 10px" onclick="operations('push')">push</button>
+<button type="button" style="display : inline-block; border:1px solid blue; padding: 10px" onclick="operations('pop')">pop</button>
+<button type="button" style="display : inline-block; border:1px solid red; padding: 10px" onclick="operations('sort')">sort</button>
+<button type="button" style="display : inline-block; border:1px solid red; padding: 10px" onclick="operations('unshift')">unshift</button>
+<button type="button" style="display : inline-block;border:1px solid red; padding: 10px" onclick="operations('reverse')">reverse</button>
+<button type="button" style="display : inline-block;border:1px solid red; padding: 10px" onclick="operations('slice')">slice</button>
+<button type="button" style="display : inline-block;border:1px solid red; padding: 10px" onclick="operations('filter')">filter</button>
+</div>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<script>
+let fruits = [];
+let error = '';
+
+
+function resetError() {
+
+    document.getElementById('error').innerHTML = ''
+}
+
+
+function operations(operationName) {
+
+    switch (operationName){
+        case 'push':
+        
+
+            let abc = document.getElementById("in").value;
+
+            if(abc != null && abc != ''){
+            let res = fruits.push(abc);
+
+            console.log(res);
+
+            document.getElementById("demo").innerHTML = fruits;
+            document.getElementById("in").value = '';
+            } else {
+                error = 'emmpty input not allowed'
+                document.getElementById('error').innerHTML = error
+            }
+            break;
+        case 'pop':
+            fruits.pop();
+            document.getElementById("demo").innerHTML = fruits;
+            break;
+        case 'sort':
+            fruits.sort();   
+            document.getElementById("demo1").innerHTML = fruits;
+            break;
+
+        case 'unshift':
+        
+        let qwe = document.getElementById("in").value;
+
+            if(qwe != null && qwe != '')
+                 {
+                    let asd = fruits.push(qwe);  
+                    document.getElementById("demo1").innerHTML = fruits;
+                 }
+            else {
+                   error = 'emmpty input not allowed'
+                   document.getElementById('error').innerHTML = error
+            }
+            break;
+        case 'reverse':
+            fruits.reverse();
+            document.getElementById("demo1").innerHTML = fruits;
+            break;
+        case 'slice':
+        var myBest = fruits.slice(-3, -1);
+        document.getElementById("demo1").innerHTML = myBest;
+            break;
+        case 'filter':
+            var we = fruits.filter (find(fruits))
+            document.getElementById("demo1").innerHTML = we;
+        default:
+            break;   
+    } 
+
+}
+
+
+</script>
+
+</body>
+</html>
