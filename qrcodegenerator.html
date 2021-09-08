@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html lang="en">
 
 <head>
@@ -88,4 +89,96 @@
     </script>
 </body>
 
+=======
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <title>Document</title>
+
+<style>
+     .get{
+
+      margin: 10px 100px;
+      border-radius: 5px;
+      border-color: black;
+      background-color: rgb(206, 185, 185);
+      max-width: 400px;
+     
+
+     }
+     .button1 {
+            background-color: rgb(222, 233, 162);
+            color: black;
+            border: 1px solid #a3d8a5;
+            border-radius: 40%;
+        }
+
+        .button1:hover {
+            background-color: #e04327;
+            color: white;
+        }
+        
+        .qr{
+            margin:10px 110px;
+        }
+</style>
+</head>
+
+<body>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    
+<div class="get p-4">
+    <h3 class="pb-4" >QR Generator:</h3><br>
+    <label class="align align-center" for="content"><h5>Enter any content for generate QR Code:</h5></h3></label><br><br>
+    <input id="value" type="text" style="width: 100%;" class="width" placeholder="Enter content" onchange="resetError()"><br><br>
+    <div id="error"></div><br>
+    <div class="text-center">
+    <button type="button" class="btn-medium button1 btn btn-border btn-medium btn-border-default " id="gn-btn" onclick="getval()""><strong>Generate</strong></button><br><br>
+</div>
+    <div id="qrcode-2" class="qr"></div>
+</div>
+    <div id="qrcode"></div>
+     
+
+    <script type="text/javascript">
+   
+    function resetError()
+          {
+            document.getElementById('error').innerHTML = ''
+                 
+          }
+     function getval(){
+           let error = ''
+          var a = document.getElementById("value").value;
+            if(a != '' ){
+                document.getElementById("qrcode-2").innerHTML = ''
+                var qrcode = new QRCode(document.getElementById("qrcode-2"), {
+                 text: a,
+                 width: 150,
+                 height: 150,
+                 colorDark: "#3790bf",
+                 colorLight: "#ffffff",
+                 correctLevel: QRCode.CorrectLevel.H
+                })
+            } 
+            else {
+               error = 'empty input not allowed'
+               document.getElementById('error').innerHTML = error
+            }
+         
+    }
+
+     
+        
+    </script>
+</body>
+
+>>>>>>> 47494bafd27914015211d6be54c600fbdfb20a43
 </html>
