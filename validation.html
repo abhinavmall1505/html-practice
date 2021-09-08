@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,45 +38,3 @@ try{
 </script>
 </body>
 </html>
-=======
-<!DOCTYPE html>
-<html>
-<head>
-
-</head>
-<body>
-<h1> id must be a number</h1>
-<h2>validation</h2>
-
-
-<form action="https://www.w3schools.com/html/" onsubmit="return validate()">
- <label for="name">enter your id:</label><br>
- <input type="text" id="fname" placeholder="provide your id"><br>
- <label for="name">enter your password:</label><br>
- <input type="password" id="pass" placeholder="remember?"><br>
-
- <button type="submit">submit</button>
- 
-</form>
-<script>
-try{
-  function validate(){
-   var fn = document.getElementById("fname");
-    var fp = document.getElementById("pass");
-    
-    if(fp.value.length < 5 || fn.value == "" || fp.value == "" || isNaN(fn.value) || fn.value > 1 ){
-    alert("enter the credential")
-    //console.log(alert);
-    return false
-    }
-    else {
-     return true
-    }
-  }
-} catch (err) {
-	console.log('err', err)
-}
-</script>
-</body>
-</html>
->>>>>>> 47494bafd27914015211d6be54c600fbdfb20a43
