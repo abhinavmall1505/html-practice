@@ -1,0 +1,37 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="mobirise/style.css">
+    <link rel="stylesheet" href="assign.css">
+    <style>
+        img {
+            width: 100%;
+        }
+    </style>
+
+</html>
+
+<body>
+
+    <p id="click_advance"><i class="icon-circle-arrow-down"></i> Advanced search</p>
+<div id="display_advance">
+    <p>This is the advance search</p>
+</div>
+<script>
+    $('#click_advance').click(function(){
+$('#display_advance').toggle('1000');
+$(this).html('<i class="icon-circle-arrow-up"></i> Advanced search');
+});
+</script>
+</body>
+
+</html>

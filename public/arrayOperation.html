@@ -17,18 +17,22 @@
             background-color: pink;
             text-align: center;
         }
+        body{
+            background-color: khaki;
+        }
     </style>
 </head>
 
 <body>
-
+    <h2>ARRAY OPERATION</h2><br><br>
     <input type="text" id="in" onchange="resetError()" placeholder="enter the element of array"></input>
     <button type="button" style="display : inline-block;border:1px solid red; padding: 10px" onclick="operations('push')">push</button>
     </body><br>
     <input type="number" id="first" placeholder="min">
     <input type="number" id="second" placeholder="max">
     <button type="submit" onclick="operations('slice')" value="slice">slice</button><br>
-   
+    <input type="text" id="filt" placeholder="word to filter">
+    <button type="button" style="display : inline-block;border:1px solid red; padding: 10px" onclick="operations('filter')">filter</button>
     
     <div id='error'></div>
     <div>
@@ -36,10 +40,8 @@
     
         <button type="button" style="display : inline-block; border:1px solid blue; padding: 10px"
             onclick="operations('pop')">pop</button>
-        <button type="button" style="display : inline-block; border:1px solid red; padding: 10px"
-            onclick="operations('sort')">sort(decending)</button>
         <button type="button" style="display : inline-block; border:1px solid blue; padding: 10px"
-            onclick="operations('acc')">(acceding)sort</button>
+            onclick="operations('acc')">sort</button>
         <button type="button" style="display : inline-block; border:1px solid red; padding: 10px"
             onclick="operations('unshift')">unshift</button>
         <button type="button" style="display : inline-block;border:1px solid red; padding: 10px"
@@ -78,7 +80,7 @@
 
                         console.log(res);
 
-                        document.getElementById("demo").innerHTML = fruits;
+                        document.getElementById("demo").innerHTML = "The output after push:>" + fruits;
                         document.getElementById("in").value = '';
                     } else {
                         error = 'emmpty input not allowed'
@@ -87,17 +89,12 @@
                     break
                 case 'pop':
                     fruits.pop();
-                    document.getElementById("demo").innerHTML = fruits;
-                    break;
-                case 'sort':
-                    
-                    fruits.sort(function (c, d) { return c - d });
-                    document.getElementById("demo1").innerHTML = fruits;
+                    document.getElementById("demo").innerHTML = "The output after pop:>" +fruits;
                     break;
                 case 'acc':
 
-                fruits.sort(function (c, d) { return d - c });
-                    document.getElementById("demo1").innerHTML = fruits;
+                fruits.sort();
+                    document.getElementById("demo1").innerHTML = "The output after sort:>" + fruits;
                     break;
 
                 case 'unshift':
@@ -105,7 +102,7 @@
 
                     if (qwe != null && qwe != '') {
                         let asd = fruits.unshift(qwe);
-                        document.getElementById("demo1").innerHTML = fruits;
+                        document.getElementById("demo1").innerHTML = "The output after unshift:>" + fruits;
                         document.getElementById("in").value = '';
                     }
                     else {
@@ -115,7 +112,7 @@
                     break;
                 case 'reverse':
                     fruits.reverse();
-                    document.getElementById("demo1").innerHTML = fruits;
+                    document.getElementById("demo1").innerHTML = "The output after reverse:>" + fruits;
                     break;
                 case 'slice':
                 
@@ -124,10 +121,10 @@
                     console.log('a', a)
                     console.log('b', b)
                     let c = fruits.slice(a,b);
-                    document.getElementById("demo1").innerHTML = c;
+                    document.getElementById("demo1").innerHTML = "The output after slice:>" + c;
                     break;
                 case 'filter':
-                    const searchkey = 'Hello'
+                    const searchkey =  document.getElementById("filt").value;
                     let newArray = fruits.filter((item) => {
                         console.log('index', item.indexOf(searchkey))
                         if (item.indexOf(searchkey) >= 0) {
@@ -136,7 +133,7 @@
                             return false
                         }
                     })
-                    document.getElementById("demo").innerHTML = newArray
+                    document.getElementById("demo").innerHTML =  newArray
                     break;
                 default:
                     break;
