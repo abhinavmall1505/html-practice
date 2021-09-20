@@ -1,0 +1,61 @@
+*
+.navbar-nav  li a:hover {
+    background-color: white !important;
+    color: red !important;
+  }
+  .block-data-wrap-1{
+      background-color: coral;
+      padding-bottom: 70;
+  }
+  .navbar-default{
+    background-color: coral;
+    border-color: coral;
+    color: white;
+  }
+  .block-header{
+      padding-top: 20px;
+  }
+  .jumbotron .container-fluid .col-sm-4 .fa{
+    font-size: 300;
+  }
+  .input-group{
+      width: 97%;
+      padding-left: 35;
+  }
+.block-data-wrap-2 .icon{
+    font-size: 230;
+}
+.sect{
+    padding: 30;
+}
+.section-3 .icon{
+    font-size: 230;
+    padding: 40 0 0 40;
+}
+.card{
+    text-align: center;
+}
+.row1 .col-sm-4{
+    text-align: center;
+}
+.section-4 .fa{
+    color: coral;
+    font-size: 50;
+}
+.panel-default{
+    border-color: coral;
+}
+.panel-heading{
+    background-color: coral !important;
+}
+.signup{
+    background-color: coral;
+    color: white;
+}
+.signup:hover{
+    background-color: white;
+    color: coral;
+}
+.panel:hover{
+    box-shadow:0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19) !important;
+}
