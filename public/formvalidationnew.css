@@ -1,0 +1,13 @@
+*
+.form-control{
+    border: none;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    
+}
+.part{
+    text-align: center;
+}
+.btn{
+    margin-top: 50px;
+}

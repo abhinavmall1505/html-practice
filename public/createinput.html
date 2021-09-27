@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="myForm">
+</div>
+
+<script>
+const myArray = [
+{name: "Ayushi"},
+{name: "Ayushi 2"}
+];
+
+myArray.map(arr => {
+	var input = document.createElement("input");
+    input.innerHTML = arr.name;
+    document.getElementById("myForm").append(input)
+})
+</script>
+</body>
+</html>

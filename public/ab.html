@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-color: rgb(162, 101, 219);
+        }
+
+        .items {
+            text-align: center;
+            background-color: rgb(118, 219, 185);
+            padding-bottom: 10px;
+
+        }
+
+        .alert {
+            position: relative;
+            border: 1px solid transparent;
+            border-radius: 1rem;
+            width: 150px;
+        }
+
+        .den1 {
+            margin: 1px;
+            padding-top: 10px;
+        }
+
+        .btn1 {
+            text-align: center;
+        }
+
+        .small,
+        small {
+            font-size: 60%;
+            font-weight: 1000;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <h1>FORM</h1>
+    </div>
+    <div>
+        <form id="myForm">
+            <p id="re"></p>
+            <div class="form-data" id="form1">
+            </div>
+            <button type="submit" class="btn1 btn btn-primary btn-lg">submit</button>
+        </form>
+    </div>
+
+    <script>
+        const myArray = [
+
+            { name: "FirstName", type: "text", placeholder: "First Name", label: "FIRST NAME :   ", class: "items den1", id: "FirstName" },
+            { name: "LastName", type: "text", placeholder: "Last Name", label: "LAST NAME :   ", class: "items den1", id: "LastName" },
+            { name: "email", type: "text", placeholder: "Your Password", label: "EMAIL :   ", class: "items den1", id: "email" },
+            { name: "password", type: "password", placeholder: "Your Password", label: "PASSWORD :    ", class: "items den1", id: "password" },
+            { name: "phonenumber", type: "number", placeholder: "Your Phonenumber", label: "PHONE NUMBER :  ", class: "items den1", id: "phonenumber" }
+        ];
+
+        myArray.map(item => {
+            let b = document.createElement("br")
+            var d = document.createElement("div");
+            var d1 = document.createElement("div");
+            var l = document.createElement("label");
+            var s = document.createElement("small")
+            l.innerHTML = item.label;
+            var p = document.createElement("input");
+
+            // var Span = document.createElement('span');
+            d.label = item.label;
+            p.placeholder = item.placeholder;
+            p.name = item.name;
+            p.type = item.type;
+            p.id = item.id;
+            d.classList.add("items");
+            d.classList.add("den1");
+
+            d.append(l)
+            d.append(p)
+            d.append(s)
+            l.append(b)
+            // d.append(Span);
+            document.getElementById("form1").append(d)
+        })
+
+        const form = document.getElementById('myForm');
+        console.log(form)
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            console.log(e)
+
+            checkinputs();
+        });
+
+
+
+
+        function checkinputs() {
+            var form3 = $("#myForm").serializeArray()
+            console.log(form3.name)
+            document.getElementById("re").innerHTML = JSON.stringify(form3);
+            form3.map(function (item) {
+                let functionName = item.name;
+                validateInputFie(item.value, item.name);
+            });
+
+           
+        }
+
+
+        function validateInputFie(value, name) {
+            console.log('this function is calling', name, value);
+
+            if (name == 'FirstName') {
+                $(`#${name}`).siblings("small").empty();
+                if (value.trim() == '') {
+                    let msg = `<div class="alert alert-light" role="alert"> ${name} is required</div>`;
+                    $(`#${name}`).siblings("small").html(msg);
+                }
+
+            }
+            if (name == 'LastName') {
+                $(`#${name}`).siblings("small").empty();
+                if (value.trim() == '') {
+                    let msg = `<div class="alert alert-light" style="width=100px" role="alert"> ${name} is required</div>`;
+                    $(`#${name}`).siblings("small").html(msg);
+                }
+            }
+            if (name == 'email') {
+                $(`#${name}`).siblings("small").empty();
+                let regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                if (!regex.test(value)) {
+                    console.log('email is not valid')
+                    let msg = `<div class="alert alert-light" role="alert"> ${name} is required</div>`;
+                    $(`#${name}`).siblings("small").html(msg);
+                }
+            }
+            if (name == 'password') {
+                let regex =  /^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{5,}$/;
+                $(`#${name}`).siblings("small").empty();
+                if (!regex.test(value)) {
+                    let msg = `<div class="alert alert-light" role="alert"> ${name} min 5 letter , with at least a symbol, upper and lower case letters and a number</div>`;
+                    $(`#${name}`).siblings("small").html(msg);
+                }
+
+            }
+        
+            if (name == 'phonenumber') {
+                $(`#${name}`).siblings("small").empty();
+                if (value.trim() == '' || isNaN(value) || value < 11) {
+                    let msg = `<div class="alert alert-light" role="alert"> ${name}is not valid </div>`;
+                    $(`#${name}`).siblings("small").html(msg);
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>

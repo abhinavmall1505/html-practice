@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<title>
+		
+	</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body style="text-align: center;">
+	<div class="container">
+	<h1 style="color: red;">
+Form
+    </h1>
+
+	<p id="p">Enter the values</p>
+	<form >
+        <div class="form-group">
+
+        <label for="name">First Name</label>
+		<input type="text" name="array[]" value="" /><br>
+        </div>
+
+        <div class="form-group">
+
+        <label for ="Last Name"> Last Name</label>
+		<input type="text" name="array[]" value="" /><br>
+        </div>
+        <div class="form-group">
+
+        <label for="Address">Address</Address></label>
+
+		<input type="text" name="array[]" value="" /><br>
+        </div>
+        <div class="form-group">
+
+        <label for ="email">Email</label>
+		<input type="email" name="array[]" value="" /><br>
+        </div>
+
+        <div class="form-group">
+
+        <label for="password">Password</label>
+		<input type="password" name="array[]" value="" /><br>
+        </div>
+
+        <div class="form-group">
+
+        <label for="Mobile number">Mobile Number</label>
+		<input type="number" name="array[]" value="" /><br>
+        </div>
+
+		<button type="button" name="button" onclick="f()">
+			Submit
+		</button>
+	</form>
+    </div>
+	<br>
+
+	<p id="par"></p>
+
+	<script type="text/javascript">
+		var val= "Values:";
+		function f() {
+			var input = document.getElementsByName('array[]');
+
+			for (var i = 0; i < input.length; i++) {
+				var a = input[i];
+				val = val + "array[" + i + "].value= "
+								+ a.value + " ";
+			}
+
+			document.getElementById("par").innerHTML = val;
+			document.getElementById("p").innerHTML = "Output";
+		}
+	</script>
+</body>
+
+</html>

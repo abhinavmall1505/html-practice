@@ -1,29 +1,42 @@
 *
 .section-1{
     text-align: center;
-    background-color: orangered;
     color: white;
     font-size: large;
     padding-top: 7;
 }
-a{
-   color: white;
+
+.header1 .a{
+   background-color: #fe525b;
 }
 a:hover{
     color: white;
 }
+.navbar-brand{
+    display: flex;
+}
+.caption-wrap {
+    color: black;
+}
+.display-5 {
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 1.5rem;
+}
 .images-part{
     background-image: url(./shopping/main.jpg);
+    background-position: 15% 55%;
+    height: 500;
 }
 .h1{
     text-align: center;
     font-weight: bold;
     color: white;
+    font-size: 5rem;
 }
 .h2{
     text-align: center;
     font-weight: bold;
-    color: white;
+    color: wheat;
 }
 .sec2{
     padding-bottom: 100;
@@ -183,6 +196,7 @@ img{
     text-align: center;
     color: white;
     padding-bottom: 15;
+    margin-right: 200;
 }
 .sec5-p2{
     text-align: center;
@@ -195,7 +209,28 @@ img{
     background-color: red;
     padding: 10;
     border-radius: 50%;
+    margin: 5;
 }
 .sec2-p2 span{
     padding: 30;
+}
+.row{
+    margin: 10;
+}
+.first{
+    padding-top: 30;
+    text-decoration: none;
+}
+.second{
+    padding-top: 30;
+    text-decoration: none;
+}
+.first a:hover{
+    color: grey;
+    text-decoration: none;
+}
+.second a:hover{
+    color:grey;
+    text-decoration: none;
+    transition: 0.3s;
 }

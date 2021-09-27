@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+	
+		</title>
+	</head>
+	<body style="text-align: center;">
+		<h1 style="color: red;">
+Form		</h1>
+		
+		<p id="p"></p>
+        <p id ="par"></p>
+        <input type="submit" onclick="f()">Submit</input>
+<script>
+			
+
+	var br = document.createElement("br");
+	
+			
+	var form = document.createElement("form");
+	form.setAttribute("method", "post");
+
+
+	var fn = document.createElement("input");
+	fn.setAttribute("type", "text");
+	fn.setAttribute("name", "array[]");
+	fn.setAttribute("placeholder", "Name");
+
+
+	var address = document.createElement("input");
+	address.setAttribute("type", "text");
+	address.setAttribute("name", "array[]");
+	address.setAttribute("placeholder", "Address");
+
+	var e = document.createElement("input");
+	e.setAttribute("type", "email");
+	e.setAttribute("name", "array[]");
+	e.setAttribute("placeholder", "E-Mail ID");
+
+	var PWD = document.createElement("input");
+	PWD.setAttribute("type", "password");
+	PWD.setAttribute("name", "array[]");
+	PWD.setAttribute("placeholder", "Password");
+
+	var phn_no = document.createElement("input");
+	phn_no.setAttribute("type", "number");
+	phn_no.setAttribute("name", "array[]");
+	phn_no.setAttribute("placeholder", "Contact Number");
+
+
+	
+				
+			
+				form.appendChild(fn);
+			
+			
+				form.appendChild(br.cloneNode());
+				
+			
+				form.appendChild(address);
+				form.appendChild(br.cloneNode());
+				
+	
+				form.appendChild(e);
+				form.appendChild(br.cloneNode());
+				
+				form.appendChild(PWD);
+				form.appendChild(br.cloneNode());
+				
+			
+			
+
+				document.getElementsByTagName("body")[0].appendChild(form);
+
+            var val= "Values:";
+		function f() {
+			var input = document.getElementsByName('array[]');
+
+			for (var i = 0; i < input.length; i++) {
+				var a = input[i];
+				val = val + "array[" + i + "].value= "
+								+ a.value + " ";
+			}
+
+			document.getElementById("par").innerHTML = val;
+			document.getElementById("p").innerHTML = "Output";
+		}
+		</script>
+	</body>
+</html>

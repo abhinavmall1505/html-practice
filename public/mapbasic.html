@@ -1,0 +1,27 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="hell"></p>
+    <script>
+
+        var arr = [
+            { fname: "ajay", lname: "singh"},
+            { fname: "amit", lname: "yadav"},
+            { fname: "shubham", lname: "pandey"},
+            { fname: "mukul", lname: "mehto"}
+        ]
+
+        let newarr = arr.map(function (value) {
+            return   [value.fname + "  " + value.lname + "<br>"];
+        });
+        document.getElementById("hell").innerHTML = newarr;
+    </script>
+</body>
+</html>
